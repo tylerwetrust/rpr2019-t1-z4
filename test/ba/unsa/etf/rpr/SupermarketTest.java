@@ -21,7 +21,7 @@ class SupermarketTest {
 
     @Test
     void izbaciArtiklSaKodom() {
-        Supermarket supermarket = new Korpa();
+        Supermarket supermarket = new Supermarket();
         supermarket.dodajArtikl(new Artikl("gibson",2000,"666"));
         supermarket.dodajArtikl(new Artikl("fender",2000,"111"));
         supermarket.dodajArtikl(new Artikl("telecaster",2000,"222"));
@@ -36,6 +36,11 @@ class SupermarketTest {
 
     @Test
     void getArtikli() {
+        Artikl a = new Artikl("gibson",2000,"666");
+        Supermarket supermarket = new Supermarket();
+        for(int i = 0; i < 20; i++) supermarket.dodajArtikl(a);
+        Artikl[] niz = supermarket.getArtikli();
+        assertEquals("gibson",niz[0].getNaziv());
 
     }
 }
